@@ -4,15 +4,15 @@
 
 <%= form_tag(admin_editor_settings_path, :method => :put) do %>
     <p>
-      <label><%= t('enable_rich_editor') %>:</label>
+       <label for="preferences_enabled"><%= t('enable_rich_editor') %>:</label>
       <%= check_box_tag('preferences[enabled]', '1', Spree::Editor::Config[:enabled]) %>
     </p>
     <p>
-      <label><%= t('rich_editor_engine') %>:</label>
+      <label for="preferences_current_editor"><%= t('rich_editor_engine') %>:</label>
       <%= select_tag 'preferences[current_editor]', options_for_select(SpreeEditor::EditorEngines, Spree::Editor::Config[:current_editor])  %>
     </p>
     <p>
-      <label><%= t('rich_editor_ids') %>:</label>
+      <label for="preferences_ids"><%= t('rich_editor_ids') %>:</label>
       <%= text_field_tag 'preferences[ids]', Spree::Editor::Config[:ids] %>
       <small><%= t('rich_editor_ids_description') %></small>
     </p>
